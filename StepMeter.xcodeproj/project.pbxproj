@@ -7,20 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2207D88B2DE6617300669460 /* SettingsGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207D88A2DE6617300669460 /* SettingsGoalView.swift */; };
+		222DC5072DE62E7700F20E31 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DC5062DE62E7700F20E31 /* MainView.swift */; };
+		222DC50A2DE6487B00F20E31 /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DC5092DE6487B00F20E31 /* MainHeaderView.swift */; };
+		222DC50C2DE64CE400F20E31 /* MainStepCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DC50B2DE64CE400F20E31 /* MainStepCounterView.swift */; };
+		222DC50E2DE6506500F20E31 /* MainFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DC50D2DE6506500F20E31 /* MainFooterView.swift */; };
+		222DC5112DE65C3A00F20E31 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DC5102DE65C3A00F20E31 /* SettingsView.swift */; };
+		222DC5142DE65E3200F20E31 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DC5132DE65E3200F20E31 /* SettingsHeaderView.swift */; };
 		22D459A62DE555C7005AB894 /* StepMeterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D459A52DE555C7005AB894 /* StepMeterApp.swift */; };
 		22D459A82DE555C7005AB894 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D459A72DE555C7005AB894 /* ContentView.swift */; };
 		22D459AA2DE555C7005AB894 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D459A92DE555C7005AB894 /* Item.swift */; };
 		22D459AC2DE555C8005AB894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D459AB2DE555C8005AB894 /* Assets.xcassets */; };
 		22D459AF2DE555C8005AB894 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D459AE2DE555C8005AB894 /* Preview Assets.xcassets */; };
+		22D459B62DE55624005AB894 /* StepMeterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D459B52DE55624005AB894 /* StepMeterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2207D88A2DE6617300669460 /* SettingsGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGoalView.swift; sourceTree = "<group>"; };
+		222DC5062DE62E7700F20E31 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		222DC5092DE6487B00F20E31 /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
+		222DC50B2DE64CE400F20E31 /* MainStepCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStepCounterView.swift; sourceTree = "<group>"; };
+		222DC50D2DE6506500F20E31 /* MainFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFooterView.swift; sourceTree = "<group>"; };
+		222DC5102DE65C3A00F20E31 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		222DC5132DE65E3200F20E31 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
 		22D459A22DE555C7005AB894 /* StepMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D459A52DE555C7005AB894 /* StepMeterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepMeterApp.swift; sourceTree = "<group>"; };
 		22D459A72DE555C7005AB894 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22D459A92DE555C7005AB894 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		22D459AB2DE555C8005AB894 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22D459AE2DE555C8005AB894 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		22D459B52DE55624005AB894 /* StepMeterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepMeterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +50,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		222DC5022DE6292800F20E31 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				222DC50F2DE65C2700F20E31 /* settings */,
+				222DC5052DE62E6300F20E31 /* main */,
+				22D459B52DE55624005AB894 /* StepMeterViewModel.swift */,
+				22D459A72DE555C7005AB894 /* ContentView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		222DC5032DE6293300F20E31 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		222DC5042DE6293A00F20E31 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		222DC5052DE62E6300F20E31 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				222DC5082DE647D200F20E31 /* components */,
+				222DC5062DE62E7700F20E31 /* MainView.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		222DC5082DE647D200F20E31 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				222DC5092DE6487B00F20E31 /* MainHeaderView.swift */,
+				222DC50B2DE64CE400F20E31 /* MainStepCounterView.swift */,
+				222DC50D2DE6506500F20E31 /* MainFooterView.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		222DC50F2DE65C2700F20E31 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				222DC5122DE65C3F00F20E31 /* components */,
+				222DC5102DE65C3A00F20E31 /* SettingsView.swift */,
+			);
+			path = settings;
+			sourceTree = "<group>";
+		};
+		222DC5122DE65C3F00F20E31 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				222DC5132DE65E3200F20E31 /* SettingsHeaderView.swift */,
+				2207D88A2DE6617300669460 /* SettingsGoalView.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		22D459992DE555C7005AB894 = {
 			isa = PBXGroup;
 			children = (
@@ -53,8 +131,10 @@
 		22D459A42DE555C7005AB894 /* StepMeter */ = {
 			isa = PBXGroup;
 			children = (
+				222DC5042DE6293A00F20E31 /* Data */,
+				222DC5032DE6293300F20E31 /* Domain */,
+				222DC5022DE6292800F20E31 /* Presentation */,
 				22D459A52DE555C7005AB894 /* StepMeterApp.swift */,
-				22D459A72DE555C7005AB894 /* ContentView.swift */,
 				22D459A92DE555C7005AB894 /* Item.swift */,
 				22D459AB2DE555C8005AB894 /* Assets.xcassets */,
 				22D459AD2DE555C8005AB894 /* Preview Content */,
@@ -140,8 +220,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D459B62DE55624005AB894 /* StepMeterViewModel.swift in Sources */,
 				22D459A82DE555C7005AB894 /* ContentView.swift in Sources */,
+				222DC5142DE65E3200F20E31 /* SettingsHeaderView.swift in Sources */,
+				222DC50C2DE64CE400F20E31 /* MainStepCounterView.swift in Sources */,
+				2207D88B2DE6617300669460 /* SettingsGoalView.swift in Sources */,
+				222DC5112DE65C3A00F20E31 /* SettingsView.swift in Sources */,
 				22D459AA2DE555C7005AB894 /* Item.swift in Sources */,
+				222DC5072DE62E7700F20E31 /* MainView.swift in Sources */,
+				222DC50A2DE6487B00F20E31 /* MainHeaderView.swift in Sources */,
+				222DC50E2DE6506500F20E31 /* MainFooterView.swift in Sources */,
 				22D459A62DE555C7005AB894 /* StepMeterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +367,7 @@
 				DEVELOPMENT_TEAM = S37782KQ48;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMotionUsageDescription = "This app needs access to motion data to count your steps.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,6 +397,7 @@
 				DEVELOPMENT_TEAM = S37782KQ48;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMotionUsageDescription = "This app needs access to motion data to count your steps.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
