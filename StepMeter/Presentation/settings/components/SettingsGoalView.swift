@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsGoalView: View {
     
-    let goalValue: String
+    let goalValue: Int
     let onEdit: () -> Void
     
     var body: some View {
@@ -18,7 +18,7 @@ struct SettingsGoalView: View {
                 Text("Goal")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                Text(goalValue)
+                Text("\(goalValue)")
                     .font(.largeTitle)
             }
             .padding()
@@ -36,5 +36,5 @@ struct SettingsGoalView: View {
 }
 
 #Preview {
-    SettingsGoalView(goalValue: "10000", onEdit: {})
+    SettingsGoalView(goalValue: 10000, onEdit: {})
 }

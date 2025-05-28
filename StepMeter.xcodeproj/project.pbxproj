@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2207D88B2DE6617300669460 /* SettingsGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207D88A2DE6617300669460 /* SettingsGoalView.swift */; };
+		2207D88D2DE6A07000669460 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207D88C2DE6A07000669460 /* SettingsViewModel.swift */; };
 		222DC5072DE62E7700F20E31 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DC5062DE62E7700F20E31 /* MainView.swift */; };
 		222DC50A2DE6487B00F20E31 /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DC5092DE6487B00F20E31 /* MainHeaderView.swift */; };
 		222DC50C2DE64CE400F20E31 /* MainStepCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222DC50B2DE64CE400F20E31 /* MainStepCounterView.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		2207D88A2DE6617300669460 /* SettingsGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGoalView.swift; sourceTree = "<group>"; };
+		2207D88C2DE6A07000669460 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		222DC5062DE62E7700F20E31 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		222DC5092DE6487B00F20E31 /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
 		222DC50B2DE64CE400F20E31 /* MainStepCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStepCounterView.swift; sourceTree = "<group>"; };
@@ -55,7 +57,6 @@
 			children = (
 				222DC50F2DE65C2700F20E31 /* settings */,
 				222DC5052DE62E6300F20E31 /* main */,
-				22D459B52DE55624005AB894 /* StepMeterViewModel.swift */,
 				22D459A72DE555C7005AB894 /* ContentView.swift */,
 			);
 			path = Presentation;
@@ -78,6 +79,7 @@
 		222DC5052DE62E6300F20E31 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				22D459B52DE55624005AB894 /* StepMeterViewModel.swift */,
 				222DC5082DE647D200F20E31 /* components */,
 				222DC5062DE62E7700F20E31 /* MainView.swift */,
 			);
@@ -99,6 +101,7 @@
 			children = (
 				222DC5122DE65C3F00F20E31 /* components */,
 				222DC5102DE65C3A00F20E31 /* SettingsView.swift */,
+				2207D88C2DE6A07000669460 /* SettingsViewModel.swift */,
 			);
 			path = settings;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				222DC50A2DE6487B00F20E31 /* MainHeaderView.swift in Sources */,
 				222DC50E2DE6506500F20E31 /* MainFooterView.swift in Sources */,
 				22D459A62DE555C7005AB894 /* StepMeterApp.swift in Sources */,
+				2207D88D2DE6A07000669460 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

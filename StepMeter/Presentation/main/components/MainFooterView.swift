@@ -9,25 +9,27 @@ import SwiftUI
 
 struct MainFooterView: View {
     let steps: Int
-    init(steps: Int) {
+    let goalValue: Int
+    init(steps: Int, goalValue: Int) {
         self.steps = steps
+        self.goalValue = goalValue
     }
     var body: some View {
         HStack {
             VStack {
                 Text("Goal")
-                Text("10,000 steps")
+                Text("\(goalValue) steps")
             }
             .padding(.leading, 32)
             Spacer()
             VStack {
                 Text("Until reached")
-                Text("\(max(0, 10_000 - steps)) steps")            }
+                Text("\(max(0, goalValue - steps)) steps")            }
             .padding(.trailing, 32)
         }
     }
 }
 
 #Preview {
-    MainFooterView(steps: 2000)
+    MainFooterView(steps: 2000, goalValue: 10000)
 }

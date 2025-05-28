@@ -18,7 +18,7 @@ struct MainView: View {
                 Spacer()
                 MainStepCounterView(steps: stepViewModel.steps)
                 Spacer()
-                MainFooterView(steps: stepViewModel.steps)
+                MainFooterView(steps: stepViewModel.steps, goalValue: stepViewModel.goalValue)
             }
         }
 }

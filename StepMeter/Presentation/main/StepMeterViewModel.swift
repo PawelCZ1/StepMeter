@@ -10,9 +10,12 @@ import SwiftUI
 
 class StepMeterViewModel: ObservableObject {
     @Published var steps: Int = 0
+    @Published var goalValue: Int
     private let pedometer = CMPedometer()
 
     init() {
+        let savedGoal = UserDefaults.standard.integer(forKey: "goalValue")
+        self.goalValue = savedGoal == 0 ? 10000 : savedGoal
         startTracking()
     }
 
