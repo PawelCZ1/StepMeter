@@ -22,7 +22,7 @@ struct MainView: View {
                     navigateToSettings: navigateToSettings
                 )
                 Spacer()
-                MainStepCounterView(steps: stepViewModel.steps)
+                MainStepCounterView(steps: stepViewModel.steps, selectedDate: $stepViewModel.selectedDate)
                 Spacer()
                 MainFooterView(steps: stepViewModel.steps, goalValue: stepViewModel.goalValue)
             }

@@ -9,14 +9,24 @@ import SwiftUI
 
 struct MainStepCounterView: View {
     let steps: Int
+    @Binding var selectedDate: Date
     
-    init(steps: Int) {
-        self.steps = steps
-    }
-        
+    var formattedDate: String {
+            let calendar = Calendar.current
+            if calendar.isDateInToday(selectedDate) {
+                return "Today"
+            } else if calendar.isDateInYesterday(selectedDate) {
+                return "Yesterday"
+            } else if calendar.isDateInTomorrow(selectedDate) {
+                return "Tomorrow"
+            } else {
+                return selectedDate.formatted(.dateTime.day().weekday(.abbreviated))
+            }
+        }
+    
     var body: some View {
         VStack {
-            Text("Steps Today")
+            Text("Steps \(formattedDate)")
                 .font(.headline)
             Text("\(steps)")
                 .font(.largeTitle)
@@ -25,6 +35,7 @@ struct MainStepCounterView: View {
     }
 }
 
-#Preview {
-    MainStepCounterView(steps: 0)
-}
+//#Preview {
+//    @State var selectedDate = Date()
+//    MainStepCounterView(steps: 0, selectedDate: $selectedDate)
+//}
