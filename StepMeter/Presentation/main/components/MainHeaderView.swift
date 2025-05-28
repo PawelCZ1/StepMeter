@@ -9,18 +9,24 @@ import SwiftUI
 
 struct MainHeaderView: View {
     
-    var days: [Date]
-    let calendar: Calendar
+    private var days: [Date] {
+        let today = calendar.startOfDay(for: Date())
+        return (-7..<7).compactMap { calendar.date(byAdding: .day, value: $0, to: today) }
+    }
+    private let calendar = Calendar.current
     
+    @Binding var selectedDate: Date
+    let onDateSelected: (Date) -> Void
     let navigateToSettings: () -> Void
 
-    init(navigateToSettings: @escaping () -> Void) {
-        self.calendar = Calendar.current
-        self.navigateToSettings = navigateToSettings
-        let today = Date()
-        self.days = []
-        self.days = (0..<7).compactMap { calendar.date(byAdding: .day, value: $0, to: today) }
-    }
+//    init(onDateSelected: @escaping (Date) -> Void, navigateToSettings: @escaping () -> Void) {
+//        self.calendar = Calendar.current
+//        self.onDateSelected = onDateSelected
+//        self.navigateToSettings = navigateToSettings
+//        let today = Date()
+//        self.days = []
+//        self.days = (0..<7).compactMap { calendar.date(byAdding: .day, value: $0, to: today) }
+//    }
 
     var body: some View {
         VStack(alignment: .center) {
@@ -54,6 +60,13 @@ struct MainHeaderView: View {
                         .padding()
                         .background(Color.blue.opacity(0.1))
                         .cornerRadius(8)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(day == selectedDate ? Color.blue : Color.clear, lineWidth: 2)
+                        )
+                        .onTapGesture {
+                            onDateSelected(day)
+                        }
                     }
                 }
                 .padding()
@@ -62,6 +75,6 @@ struct MainHeaderView: View {
     }
 }
 
-#Preview {
-    MainHeaderView(navigateToSettings: {})
-}
+//#Preview {
+////    MainHeaderView(selectedDate: <#Binding<Date>#>, onDateSelected: { _ in }, navigateToSettings: {})
+//}

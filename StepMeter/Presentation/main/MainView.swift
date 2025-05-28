@@ -9,12 +9,18 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject private var stepViewModel = StepMeterViewModel()
-    
     let navigateToSettings: () -> Void
     
         var body: some View {
             VStack {
-                MainHeaderView(navigateToSettings: navigateToSettings)
+                MainHeaderView(
+                    selectedDate: $stepViewModel.selectedDate,
+                    onDateSelected: { date in
+                        stepViewModel.selectedDate = date
+                        stepViewModel.fetchSteps(for: date)
+                    },
+                    navigateToSettings: navigateToSettings
+                )
                 Spacer()
                 MainStepCounterView(steps: stepViewModel.steps)
                 Spacer()
