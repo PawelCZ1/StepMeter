@@ -48,28 +48,34 @@ struct MainHeaderView: View {
                 
             }
             .frame(maxWidth: .infinity)
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 16) {
-                    ForEach(days, id: \.self) { day in
-                        VStack {
-                            Text(day, format: .dateTime.day())
-                                    .font(.title2)
-                            Text(day, format: .dateTime.weekday(.abbreviated))
-                                .font(.caption)
-                        }
-                        .padding()
-                        .background(Color.blue.opacity(0.1))
-                        .cornerRadius(8)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(day == selectedDate ? Color.blue : Color.clear, lineWidth: 2)
-                        )
-                        .onTapGesture {
-                            onDateSelected(day)
+            ScrollViewReader { proxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 16) {
+                        ForEach(days, id: \.self) { day in
+                            VStack {
+                                Text(day, format: .dateTime.day())
+                                        .font(.title2)
+                                Text(day, format: .dateTime.weekday(.abbreviated))
+                                    .font(.caption)
+                            }
+                            .padding()
+                            .background(Color.blue.opacity(0.1))
+                            .cornerRadius(8)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(day == selectedDate ? Color.blue : Color.clear, lineWidth: 2)
+                            )
+                            .onTapGesture {
+                                onDateSelected(day)
+                            }
                         }
                     }
+                    .padding()
                 }
-                .padding()
+                .onAppear {
+                    let today = calendar.startOfDay(for: Date())
+                    proxy.scrollTo(today, anchor: .center)
+                }
             }
         }
     }
