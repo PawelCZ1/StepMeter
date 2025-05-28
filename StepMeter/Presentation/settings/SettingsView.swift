@@ -14,28 +14,36 @@ struct SettingsView: View {
     @StateObject private var viewModel = SettingsViewModel()
     
     var body: some View {
-        VStack {
-            SettingsHeaderView(navigateBack: navigateBack)
-            Spacer()
-            SettingsGoalView(goalValue: viewModel.goalValue) {
-                showGoalDialog = true
-            }
-            Spacer()
-        }
-        .sheet(isPresented: $showGoalDialog) {
-            VStack(spacing: 20) {
-                Text("Edit Goal")
-                    .font(.headline)
-                TextField("Goal", text: $viewModel.editingGoal)
-                    .keyboardType(.numberPad)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding()
-                Button("Done") {
-                    viewModel.saveGoal()
-                    showGoalDialog = false
+        ZStack {
+            LinearGradient(
+                colors: [Color.blue.opacity(0.3), Color.green.opacity(0.3)],
+                        startPoint: .leading,
+                        endPoint: .trailing
+            )
+            .ignoresSafeArea()
+            VStack {
+                SettingsHeaderView(navigateBack: navigateBack)
+                Spacer()
+                SettingsGoalView(goalValue: viewModel.goalValue) {
+                    showGoalDialog = true
                 }
+                Spacer()
             }
-            .padding()
+            .sheet(isPresented: $showGoalDialog) {
+                VStack(spacing: 20) {
+                    Text("Edit Goal")
+                        .font(.headline)
+                    TextField("Goal", text: $viewModel.editingGoal)
+                        .keyboardType(.numberPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .padding()
+                    Button("Done") {
+                        viewModel.saveGoal()
+                        showGoalDialog = false
+                    }
+                }
+                .padding()
+            }
         }
     }
 }
