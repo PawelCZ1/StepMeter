@@ -6,10 +6,10 @@
 //
 
 import SwiftUI
-import SwiftData
 
 enum Destination: Hashable {
     case settings
+    case statistics
 }
 
 struct ContentView: View {
@@ -17,11 +17,19 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack(path: $path) {
-            MainView(navigateToSettings: { path.append(Destination.settings) })
+            MainView(
+                navigateToSettings: { path.append(Destination.settings)
+                },
+                navigateToStatistics: {
+                    path.append(Destination.statistics)
+                }
+            )
             .navigationDestination(for: Destination.self) { destination in
                 switch destination {
                     case .settings:
                         SettingsView(navigateBack: { path.removeLast() })
+                    case .statistics:
+                        StatisticsView(navigateBack: { path.removeLast() })
                 }
             }
         }

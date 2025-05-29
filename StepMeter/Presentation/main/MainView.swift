@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @StateObject private var stepViewModel = StepMeterViewModel()
     let navigateToSettings: () -> Void
+    let navigateToStatistics: () -> Void
     
         var body: some View {
             ZStack {
@@ -26,7 +27,8 @@ struct MainView: View {
                             stepViewModel.selectedDate = date
                             stepViewModel.fetchSteps(for: date)
                         },
-                        navigateToSettings: navigateToSettings
+                        navigateToSettings: navigateToSettings,
+                        navigateToStatistics: navigateToStatistics
                     )
                     Spacer()
                     MainStepCounterView(steps: stepViewModel.steps, selectedDate: $stepViewModel.selectedDate)
@@ -39,5 +41,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView(navigateToSettings: {})
+    MainView(navigateToSettings: {}, navigateToStatistics: {})
 }

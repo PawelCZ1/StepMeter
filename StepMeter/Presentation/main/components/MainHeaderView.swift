@@ -18,6 +18,7 @@ struct MainHeaderView: View {
     @Binding var selectedDate: Date
     let onDateSelected: (Date) -> Void
     let navigateToSettings: () -> Void
+    let navigateToStatistics: () -> Void
 
 //    init(onDateSelected: @escaping (Date) -> Void, navigateToSettings: @escaping () -> Void) {
 //        self.calendar = Calendar.current
@@ -76,6 +77,14 @@ struct MainHeaderView: View {
                     let today = calendar.startOfDay(for: Date())
                     proxy.scrollTo(today, anchor: .center)
                 }
+            }
+            Button(action: navigateToStatistics) {
+                    Text("View Statistics")
+                        .font(.title2)
+                        .padding()
+                        .background(Color.blue.opacity(0.1))
+                        .cornerRadius(8)
+                        .foregroundColor(.black)
             }
         }
     }
