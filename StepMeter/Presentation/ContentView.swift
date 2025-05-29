@@ -8,17 +8,24 @@
 import SwiftUI
 import SwiftData
 
+enum Destination: Hashable {
+    case settings
+}
+
 struct ContentView: View {
-    
-    @State var isSettingsPresented: Bool = false
-    
+    @State private var path = NavigationPath()
+
     var body: some View {
-        if isSettingsPresented {
-            SettingsView(navigateBack: {isSettingsPresented = false})
-                
-        } else {
-            MainView(navigateToSettings: {isSettingsPresented = true})
+        NavigationStack(path: $path) {
+            MainView(navigateToSettings: { path.append(Destination.settings) })
+            .navigationDestination(for: Destination.self) { destination in
+                switch destination {
+                    case .settings:
+                        SettingsView(navigateBack: { path.removeLast() })
+                }
+            }
         }
+        
     }
 }
 

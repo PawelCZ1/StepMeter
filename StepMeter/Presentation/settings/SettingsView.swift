@@ -45,6 +45,7 @@ struct SettingsView: View {
                 .padding()
             }
         }
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 
