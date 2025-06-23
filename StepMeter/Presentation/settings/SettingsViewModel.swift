@@ -8,18 +8,12 @@
 import SwiftUI
 
 class SettingsViewModel: ObservableObject {
-    @Published var goalValue: Int
+    @AppStorage("goalValue") var goalValue: Int = 10000
     @Published var editingGoal: String = ""
 
-    init() {
-        let savedGoal = UserDefaults.standard.integer(forKey: "goalValue")
-        self.goalValue = savedGoal == 0 ? 10000 : savedGoal
-    }
-
     func saveGoal() {
-        if let newGoal = Int(editingGoal) {
-            goalValue = newGoal
-            UserDefaults.standard.set(newGoal, forKey: "goalValue")
+            if let newGoal = Int(editingGoal) {
+                goalValue = newGoal
+            }
         }
-    }
 }

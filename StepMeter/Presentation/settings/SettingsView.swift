@@ -13,6 +13,8 @@ struct SettingsView: View {
     @State private var showGoalDialog = false
     @StateObject private var viewModel = SettingsViewModel()
     
+    
+    
     var body: some View {
         ZStack {
             LinearGradient(
